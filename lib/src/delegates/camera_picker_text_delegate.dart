@@ -31,55 +31,56 @@ CameraPickerTextDelegate cameraPickerTextDelegateFromLocale(Locale? locale) {
 class CameraPickerTextDelegate {
   const CameraPickerTextDelegate();
 
-  String get languageCode => 'zh';
+  String get languageCode => 'en';
 
   /// Confirm string for the confirm button.
   /// 确认按钮的字段
-  String get confirm => '确认';
+  String get confirm => 'Confirm';
 
   /// Tips above the shooting button before shooting.
   /// 拍摄前确认按钮上方的提示文字
-  String get shootingTips => '轻触拍照';
+  String get shootingTips => 'tap to take photo';
 
   /// Tips with recording above the shooting button before shooting.
   /// 拍摄前确认按钮上方的提示文字（带录像）
-  String get shootingWithRecordingTips => '轻触拍照，长按摄像';
+  String get shootingWithRecordingTips =>
+      'Tap to take a photo, long press to record';
 
   /// Tips with only recording above the shooting button before shooting.
   /// 拍摄前确认按钮上方的提示文字（仅录像）
-  String get shootingOnlyRecordingTips => '长按摄像';
+  String get shootingOnlyRecordingTips => 'long press camera';
 
   /// Tips with tap recording above the shooting button before shooting.
   /// 拍摄前确认按钮上方的提示文字（点击录像）
-  String get shootingTapRecordingTips => '轻触摄像';
+  String get shootingTapRecordingTips => 'touch camera';
 
   /// Load failed string for item.
   /// 资源加载失败时的字段
-  String get loadFailed => '加载失败';
+  String get loadFailed => 'Failed to load';
 
   /// Default loading string for the dialog.
   /// 加载中弹窗的默认文字
-  String get loading => '加载中…';
+  String get loading => 'Loading…';
 
   /// Saving string for the dialog.
   /// 保存中弹窗的默认文字
-  String get saving => '保存中…';
+  String get saving => 'saving…';
 
   /// Semantics fields.
   ///
   /// Fields below are only for semantics usage. For customizable these fields,
   /// head over to [EnglishCameraPickerTextDelegate] for better understanding.
-  String get sActionManuallyFocusHint => '手动聚焦';
+  String get sActionManuallyFocusHint => 'manual focus';
 
-  String get sActionPreviewHint => '预览';
+  String get sActionPreviewHint => 'preview';
 
-  String get sActionRecordHint => '录像';
+  String get sActionRecordHint => 'video';
 
-  String get sActionShootHint => '拍照';
+  String get sActionShootHint => 'Photograph';
 
-  String get sActionShootingButtonTooltip => '拍照按钮';
+  String get sActionShootingButtonTooltip => 'photo button';
 
-  String get sActionStopRecordingHint => '停止录像';
+  String get sActionStopRecordingHint => 'stop recording';
 
   String sCameraLensDirectionLabel(CameraLensDirection value) {
     switch (value) {
