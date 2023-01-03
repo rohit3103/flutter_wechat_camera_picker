@@ -362,9 +362,9 @@ class CameraPickerViewerState extends State<CameraPickerViewer> {
       color: Colors.black,
       child: Stack(
         children: <Widget>[
-          buildPreview(context),
-          buildForeground(context),
-          buildLoading(context),
+          // buildPreview(context),
+          // buildForeground(context),
+          // buildLoading(context),
         ],
       ),
     );
