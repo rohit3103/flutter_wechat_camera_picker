@@ -374,7 +374,7 @@ class CameraPickerViewerState extends State<CameraPickerViewer> {
       child: Stack(
         fit: StackFit.expand,
         children: <Widget>[
-          buildPreview(context),
+          Expanded(child: buildPreview(context)),
           buildForeground(context),
           buildLoading(context),
         ],
