@@ -233,9 +233,9 @@ class CameraPickerViewerState extends State<CameraPickerViewer> {
       builder = Stack(
         children: <Widget>[
           Positioned.fill(
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
+            child: SizedBox.expand(
+              // height: MediaQuery.of(context).size.height,
+              // width: MediaQuery.of(context).size.width,
               child: FittedBox(
                 fit: BoxFit.cover,
                 child: SizedBox(
