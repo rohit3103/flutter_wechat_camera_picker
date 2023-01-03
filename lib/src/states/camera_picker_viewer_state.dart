@@ -232,17 +232,15 @@ class CameraPickerViewerState extends State<CameraPickerViewer> {
     if (widget.viewType == CameraPickerViewType.video) {
       builder = Stack(
         children: <Widget>[
-          Positioned.fill(
-            child: SizedBox.expand(
-              // height: MediaQuery.of(context).size.height,
-              // width: MediaQuery.of(context).size.width,
-              child: FittedBox(
-                fit: BoxFit.cover,
-                child: SizedBox(
-                  width: videoController.value.size.width,
-                  height: videoController.value.size.height,
-                  child: VideoPlayer(videoController),
-                ),
+          SizedBox.expand(
+            // height: MediaQuery.of(context).size.height,
+            // width: MediaQuery.of(context).size.width,
+            child: FittedBox(
+              fit: BoxFit.cover,
+              child: SizedBox(
+                width: videoController.value.size.width,
+                height: videoController.value.size.height,
+                child: VideoPlayer(videoController),
               ),
             ),
           ),
