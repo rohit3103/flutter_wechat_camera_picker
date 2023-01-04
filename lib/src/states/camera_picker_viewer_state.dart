@@ -228,11 +228,23 @@ class CameraPickerViewerState extends State<CameraPickerViewer> {
   }
 
   Widget buildPreview(BuildContext context) {
+
+    // final size = MediaQuery.of(context).size;
+    final size = videoController.value.size;
+    final width = size.width;
+    final height = size.height;
+    final deviceRatio = size.width / size.height;
+
+
     final Widget builder;
     if (widget.viewType == CameraPickerViewType.video) {
       builder = Stack(
+
+        fit : StackFit.expand,
+
         children: <Widget>[
-          VideoPlayer(videoController),
+          buildFullScreen(),
+          
           buildPlayControlButton(context),
         ],
       );
@@ -249,6 +261,26 @@ class CameraPickerViewerState extends State<CameraPickerViewer> {
       ),
     );
   }
+
+
+
+
+
+
+  Widget buildFullScreen() {
+    final size = videoController.value.size;
+    final width = size.width;
+    final height = size.height;
+
+    return FittedBox(
+      fit: BoxFit.cover,
+      child: SizedBox(width: width, height: height, child: AspectRatio(
+        aspectRatio: videoController.value.aspectRatio,
+        child: VideoPlayer(videoController))),
+    );
+  }
+
+
 
   /// The confirm button for the preview section.
   /// 预览区的确认按钮
@@ -361,6 +393,7 @@ class CameraPickerViewerState extends State<CameraPickerViewer> {
     return Material(
       color: Colors.black,
       child: Stack(
+        fit: StackFit.expand,
         children: <Widget>[
           buildPreview(context),
           buildForeground(context),
@@ -408,7 +441,7 @@ class _WechatLoadingState extends State<_WechatLoading>
           child: AnimatedBuilder(
             animation: _controller,
             builder: (_, Widget? child) => Transform.rotate(
-              angle: math.pi * 2 * _controller.value,
+              angle: math.pi  2  _controller.value,
               child: child,
             ),
             child: CustomPaint(
@@ -470,7 +503,7 @@ class _LoadingPainter extends CustomPainter {
       ..shader = SweepGradient(
         colors: <Color>[color.withOpacity(0), color],
       ).createShader(rect);
-    canvas.drawArc(rect, 0.1, math.pi * 2 * 0.9, false, paint);
+    canvas.drawArc(rect, 0.1, math.pi  2  0.9, false, paint);
   }
 
   @override
