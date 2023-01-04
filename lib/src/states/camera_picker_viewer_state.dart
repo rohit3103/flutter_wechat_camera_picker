@@ -441,7 +441,7 @@ class _WechatLoadingState extends State<_WechatLoading>
           child: AnimatedBuilder(
             animation: _controller,
             builder: (_, Widget? child) => Transform.rotate(
-              angle: math.pi  2  _controller.value,
+              angle: math.pi * 2 * _controller.value,
               child: child,
             ),
             child: CustomPaint(
@@ -503,7 +503,7 @@ class _LoadingPainter extends CustomPainter {
       ..shader = SweepGradient(
         colors: <Color>[color.withOpacity(0), color],
       ).createShader(rect);
-    canvas.drawArc(rect, 0.1, math.pi  2  0.9, false, paint);
+    canvas.drawArc(rect, 0.1, math.pi * 2 * 0.9, false, paint);
   }
 
   @override
